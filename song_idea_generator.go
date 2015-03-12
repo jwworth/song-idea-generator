@@ -40,13 +40,13 @@ func main() {
 
 	// Generate an idea
 	fmt.Println("GENIUS IDEA:")
-	fmt.Println("A song about", themes[randInt(len(themes))])
-	fmt.Println("In the key of", keys[randInt(len(keys))])
-	fmt.Println("With", meter[randInt(len(meter))], "meter")
-	fmt.Println("And", inst[randInt(len(keys))], "instrumentation")
+	fmt.Println("A song about", sample(themes))
+	fmt.Println("In the key of", sample(keys))
+	fmt.Println("With", sample(meter), "meter")
+	fmt.Println("And", sample(inst), "instrumentation")
 }
 
-// Return a random number
-func randInt(size int) int {
-	return rand.Intn(size)
+// Return a random array value
+func sample(array []string) string {
+	return array[rand.Intn(len(array))]
 }
